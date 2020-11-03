@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/list.css"/>
+		<script type="text/javascript">
+			window.onload = function(){
+				//全选全不选
+				var checkOrNo = document.getElementById('checkOrNo');
+				var num = 1;
+				checkOrNo.onclick = function(){
+					var items = document.getElementsByName('items');
+					// alert(items)
+					if (num==1) {
+						for (var i = 0;i<items.length;i++) {
+							items[i].checked = true;
+						}
+						checkOrNo.value = '全不选'
+					}
+					
+					if (num==2) {
+						for (var i = 0;i<items.length;i++) {
+							items[i].checked = false;
+						}
+						checkOrNo.value = '全选'
+					}
+					
+					num++
+					if (num==3) {
+						num = 1;
+					}
+				}
+				
+				//添加新事件
+				var btn = document.getElementById('btn');
+				btn.onclick = function(){
+					var content = document.getElementById('search').value;
+					var div = document.createElement('div');
+					div.id = 'box1';
+					div.innerHTML = '<input type="checkbox" name="items" id="no" value='+content+ '/>'+'<h3 id="font">'+content+'</h3>'+
+					'<input type="button" name="finish" id="finish" value="已经完成" class="finish"/>';
+					var parent = document.getElementById('ongoing');
+					parent.appendChild(div)
+					// var finish = div.getElementsByTagName('input')[1]
+					
+	// 				finish.onclick = function(){
+	// 					parent.removeChild(div)
+	// 
+	// 				}
+				}
+
+				//已经完成事件
+				 
+				var  items = document.getElementsByName('items');
+				var ongoing = document.getElementById('ongoing')
+				var finsish = document.getElementsByName('finish')
+ 					ongoing.onclick = function(event){
+ 						event = event||window.event;
+ 						// event.cancelBubble = true;
+ 					if (event.target.className == 'finish'){											
+ 						 for (var i = 0;i<items.length;i++) {
+								 var tr = items[i].parentNode;
+								 console.log(tr)
+							if (items[i].checked) {
+	 							var content = items[i].value;
+								var flag = confirm('确认完成'+'<'+content+'>')
+	 							if (flag) {
+									tr.parentNode.removeChild(tr);
+									}
+										return false
+									}else{
+										alert('请先勾选')
+										
+									}
+ 						}
+ 				}	
+ 				
+ 				 }
+				 //勾选全部/并且已经完成
+				var checkOrNo = document.getElementById('checkOrNo');
+				var items = document.getElementsByName('items');
+				var fin = document.getElementById('fin');
+				var arr = new Array();
+				var tr;
+				var a;
+				fin.onclick = function(){
+					for (var i = 0;i<items.length;i++) {
+						tr = this.parentNode;
+						var soul ;
+						if (items[i].checked) {
+							soul = 1
+						}else{
+							soul = 2;
+						}
+						arr[i] = soul;	
+						}
+					console.log(arr)	
+					var nary = arr.sort()
+					console.log(arr)
+					for (var i = 0;i<arr.length-1;i++) {
+						if (arr[i] != arr[i+1] || arr[i]==2) {
+							a = 1;
+							}else{
+								a = 2;
+							}
+							}
+					console.log(a)
+					if (a==1) {
+						alert('请勾选全部')
+					}else{
+						var flag = confirm('确认完成全部？')
+						if (flag) {
+							tr.parentNode.removeChild(tr)
+						}
+					}
+						
+						}
+				//添加历史记录
+						
+					
+				
+						
+						
+						
+						
+				
+						
+					}
+		</script>
+	</head>
+	<body>
+		<div id="head">
+			<h1 id="todolist">TodoList</h1>
+			<input type="text" name="" id="search" value="" placeholder="添加ToDoList"/>
+			<input type="button" name="" id="btn" value="提交" />
+		</div>
+		
+		<div id="body">
+			<div id="ongoing">
+				<h1 id="event">正在进行的事件</h1>
+				<input type="button" name="" id="checkOrNo" value="全选" class="全选"/>
+				<input type="button" name="" id="fin" value="已完成" />
+				<div id="box1">
+					<input type="checkbox" name="items" id="no" value="正在进行的的项目1" class="" />
+					<h3 id="font">正在进行的的项目1</h3>
+					<input type="button" name="finish" id="finish" value="已经完成" class="finish"/>
+				</div>
+				<div id="box1">
+					<input type="checkbox" name="items" id="no" value="正在进行的的项目2" class=""/>
+					<h3 id="font">正在进行的的项目2</h3>
+					<input type="button" name="finish" id="finish" value="已经完成" class="finish"/>
+				</div>
+				<div id="box1">
+					<input type="checkbox" name="items" id="no" value="正在进行的的项目2" class="" />
+					<h3 id="font">正在进行的的项目2</h3>
+					<input type="button" name="finish" id="finish" value="已经完成" class="finish"/>
+				</div>
+			</div>
+		<div id="arl">
+			<h1 id="event">已经完成的事件</h1>
+			<div id="box2">
+				<input type="checkbox" name="" id="yes" value="已经完成的项目1" />
+				<h3 id="font">已经完成的项目1</h3>
+			</div>
+			<div id="box2">
+				<input type="checkbox" name="" id="yes" value="已经完成的项目2" />
+				<h3 id="font">已经完成的项目1</h3>
+			</div>
+			<div id="box2">
+				<input type="checkbox" name="" id="yes" value="已经完成的项目2" />
+				<h3 id="font">已经完成的项目1</h3>
+			</div>
+			<div id="box2">
+				<input type="checkbox" name="" id="yes" value="已经完成的项目2" />
+				<h3 id="font">已经完成的项目1</h3>
+			</div>
+		</div>
+		</div>
+		<div id="footer">
+			
+		</div>
+	</body>
+</html>
