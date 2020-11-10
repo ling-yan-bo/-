@@ -1,0 +1,369 @@
+/*修改container的宽度，是根据设计稿来走的*/
+@media screen and (min-width: 1280px) {
+	.container{
+		width: 1280px;
+	}
+}
+body{
+	background-color: #EEEEEE;
+}
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	background-color: #66666
+}
+a:hover{
+	text-decoration: none;
+}
+header{
+	padding-left: 0!important;
+}
+.log{
+	background-color: #FF5E52;
+
+}
+/*让图片大小跟着网页的变化而变化*/
+.log img{
+	/*logo图片不需要缩放*/
+	max-width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+/*如果进入超小屏幕下，logo里面的图片隐藏起来*/
+/*我们事先准备好一个盒子在logo里面，它平时是隐藏起来的，只在超小屏幕下显示*/
+.log span{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	color: #FFF;
+	font-size: 18px;
+	text-align: center;
+}
+.nav{
+	background-color: #eeee;
+	border: 1px solid #cccc;
+}
+.nav a{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	/*padding-left: 60px;*/
+	text-align: center;
+	font-size: 16px;
+}
+.nav a:hover{
+	background-color: #FF5E52;
+}
+.nav a::before{
+	/*文字垂直居中*/
+	vertical-align: middle;
+	padding-right: 5px; 
+}
+/*当我们进入小屏幕和超小屏幕时，我们nav里面的li浮动起来，并且宽度为14%*/
+@media screen and (max-width: 991px) {
+	.nav li{
+		float: left;
+		width: 14%;
+	}
+	header{
+		padding: 0!important;
+	}
+	article{
+		padding: 0!important;
+	}
+	aside{
+		padding: 0!important;
+	}
+}
+/*当我们进入超小屏幕时，我们nav里面的文字会变小*/
+@media screen and (max-width: 767px) {
+	.nav li a{
+		font-size: 12px;
+	}
+	.nav a::before{
+		display: none;
+	}
+	/*当我们处于超小屏幕时，第一个li宽度为100% 剩下的各占50%*/
+	.news li:nth-child(1){
+		width: 100% !important;
+		padding-right: 0px!important;
+		width: 100% !important;
+		height: 100% !important;
+	}
+	.news li{
+		width: 50%!important;
+		height: 100% !important;
+	}
+	.publish h3{
+		font-size: 15px;
+	}
+	.publish p{
+		font-size: 10px;
+	}
+
+}
+.banner{
+	position: relative;
+	width: 100%;
+	/*height: 282.78px;*/
+	background-color: red;
+	margin-top: 20px;
+}
+.banner img{
+	width: 100%;
+	height: 100%;
+}
+.banner p{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-bottom:0;
+	background: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 41px;
+	line-height: 41px;
+	font-size: 20px;
+	padding-left: 10px;
+}
+.banner p:hover{
+	background-color: #FF6054;
+}
+.news li{
+	float: left;
+	width: 25%;
+	height: 128px;
+	/*background-color: red;*/
+	/*padding-right: 10px;*/
+	margin-top: 10px;
+}
+.news li a{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	/*background-color: purple;*/
+}
+
+.news li:nth-child(1){
+	width: 50%;
+	height: 266px;
+	padding-right: 10px;
+	/*background-color: pink;*/
+}
+.news li:nth-child(4){
+	padding-right: 10px;
+}
+.news li:nth-child(2){
+	padding-right: 10px;
+}
+.news li:nth-child(1) p{
+	line-height: 41px;
+	font-size: 20px;
+}
+.news li a img{
+	width: 100%;
+	height: 100%;
+}
+.news li a p{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height:41px;
+	left: 0;
+	margin-bottom: 0;
+	/*设置背景颜色和透明度*/
+	background: rgba(0,0,0,0.7);
+	font-size: 12px;
+	color: #ffff;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px;
+}
+.news li a p:hover{
+	background-color: #FF6054;
+}
+.publish{
+	margin-top: 10px;
+	width: 100%;
+	padding:0 15px; 
+}
+.col-sm-9{
+	padding: 0!important;
+}
+.col-sm-3{
+	padding:0!important;
+}
+.publish .row{
+	background-color: #FFF;
+	/*padding-bottom: 10px 0;*/
+	margin-top: 10px;
+}
+.publish h3,p{
+	padding-left: 15px;
+}
+
+.pic a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin-left: 15px;
+	margin-top: 55px;
+}
+.pic img{
+	width: 80%;
+	height: 80%
+}
+.aside{
+	/*background-color: #FFFFFF;*/
+	padding-right: 0!important;
+}
+.asidehot{
+	width:100%;
+	height: 156px;
+	background-color: #FFFFFF;
+	margin-top:20px; 
+}
+.asidehot:hover{
+	border:1px solid #FF5E52;
+}
+.asidehot span{
+	display: inline-block;
+	background-color: #FF5E52;
+	margin-left:20px;
+	top:0;
+	color: #fff;
+	font-size: 14px;
+	height: 28px;
+	width: 85px;
+	text-align: center;
+	line-height: 28px;
+
+}
+.asidehot h2{
+	margin-left:20px;
+	color: #FF5E52;
+	font-size: 20px;
+	font-weight: normal;
+}
+.asidehot p{
+	display: inline-block;
+	margin-left:20px;
+	margin-right:20px;
+	font-size: 12px;
+	margin-top: 5px;
+}
+.search{
+	position: relative;
+	width: 100%;
+	height: 108px;
+	background-color: #fff;
+	/*border-top: 20px solid #EEEEEE;*/
+	margin-top: 20px;
+	margin-bottom:20px;
+}
+.search strong{
+	border-bottom: 2px solid #FF5E52;
+	display: inline-block;
+	margin: 20px 0  0 20px;
+	font-size: 20px;
+	font-weight: normal;
+}
+.search form #search{
+	margin-left: 20px;
+	margin-top: 10px;
+	height: 30px;
+	width: 60%;
+	border:2px solid grey;
+	opacity: 0.5;
+	text-align: left;
+
+}
+.search form #btn{
+	position: absolute;
+	display: inline-block;
+	background-color: #FF5E52;
+	color: #FFF;
+	height: 28%;
+	width: 28%;
+	border:2px solid #FF5E52;
+	opacity: 0.8;
+	/*margin-left:0;*/
+	left: 66%;
+	top:60px;
+}
+.weekhot{
+	height: 234px;
+	width: 100%;
+	background-color: #FFF;
+	margin-top: 20px;
+}
+.weekhot h3{
+	border-bottom: 2px solid #FF5E52;
+	display: inline-block;
+	margin: 20px 0  0 20px;
+	font-size: 20px;
+	font-weight: normal;
+	opacity: 0.9;
+}
+.weekhot ul li{
+	margin-left: 20px;
+	padding: 8px;
+	position: relative;
+}
+.weekhot ul{
+	margin-top: 5px;
+}
+.read{
+	display: inline-block;
+	margin-right: 0px;
+	position: absolute;
+	right: 10px;
+	opacity: 0.7;
+}
+.redom{
+	background-color: #FFFF;
+	border-bottom: 1px solid #7777;
+
+}
+.lili{
+	background-color: #FFFF;
+}
+.lili span{
+	border-bottom: 2px solid #FF5E52 ;
+	display: inline-block;
+	margin: 20px 0  0 20px;
+	font-size: 20px;
+	font-weight: normal;
+}
+.recommendation a{
+	display: block;
+	margin: 10px 0  0 20px;
+	color: #444;
+}
+.recommendation p{
+	margin-left: 6px;
+	font-size: 13px;
+}
+.col-md-8{
+	padding-right: 0!important;
+}
+/*.col-md-4{
+	padding-left:0!important;
+	padding-right:0!important;
+}*/
+.asidpic a{
+	display: block;
+	width: 100%;
+	padding:10px;
+	/*padding-right: 15px;*/
+
+}
+.asidpic a img{
+	width: 100%;
+	height: 100%;
+
+}

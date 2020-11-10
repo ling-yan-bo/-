@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<title>栅格系统</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<style type="text/css" media="screen">
+		/*给class属性名以col开头的设置样式*/
+		[class^="col"]{
+			border:1px solid red;
+		}
+		/*规定属于其父元素的第1个子元素的每个row的背景色：*/
+		.container .row:nth-child(1){
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+<!-- 	栅格系统简介
+		Bootstrap提供了一整套响应式、移动设备优先的的流式栅格系统，随着屏幕或者视口尺寸的增加
+		系统会自动分为最多12列
+		Bootstrap里面的container是固定的，但是在不同的屏幕下，container的宽度不同，我们再把container划分为12等份
+	Normalize.css是css初始化的一个库 -->
+
+	<!-- container和rol都是规定好的类名 -->
+	<div class="container">
+		<div class="row">
+			<!-- 在大屏下每一个孩子占据3份，在中等屏幕下一个孩子占据4份,在小屏幕下每一个孩子占6份 -->
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">1</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+		</div>
+		<!-- 孩子份数相加等于12，则孩子会占满整个container的宽度 -->
+		<div class="row">
+			<div class="col-lg-6">5</div>
+			<div class="col-lg-2">6</div>
+			<div class="col-lg-2">7</div>
+			<div class="col-lg-2">8</div>
+		</div>
+		<!-- 如果孩子份数相加小于12，则不会占满整个container的宽度，会有空白 -->
+		<div class="row">
+			<div class="col-lg-6">9</div>
+			<div class="col-lg-2">10</div>
+			<div class="col-lg-2">11</div>
+			<div class="col-lg-1">12</div>
+		</div>
+		<!-- 如果孩子份数相加大于12，多出来的部分会在另外一行显示 -->
+		<div class="row">
+			<div class="col-lg-6">13</div>
+			<div class="col-lg-2">14</div>
+			<div class="col-lg-2">15</div>
+			<div class="col-lg-3">16</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

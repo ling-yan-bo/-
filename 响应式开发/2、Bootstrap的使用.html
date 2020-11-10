@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- 创建HTML骨架 -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		/*利用我们写的样式覆盖原来的样式 可以这样写*/
+		.lili{
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">123</div>
+<!-- 	1、container类
+		响应式布局容器，固定宽度
+		大屏>1200px时宽度固定为1170px
+		中屏>992px时宽度固定为970px
+		小屏>768px时宽度固定为750px
+		超小屏100% -->
+	<div class="container-fluid">456</div>
+<!-- 	2、container-fluid类
+			流式布局容器，百分百宽度
+			占据全部视口（viewport）的容器
+			适合于单独移动端开发 -->
+
+
+
+
+	<!-- 是通过类名来操作的 -->
+	<button type="button" class="btn btn-success">Success</button>
+	<div class="btn btn-success lili">
+		刘利利
+	</div>
+</body>
+</html>
